@@ -1,20 +1,15 @@
-# Use Node.js Alpine base image
-FROM node:alpine
-
-# Create and set the working directory inside the container
+# Stage 1: Build the Vite application
+FROM node:20-alpine AS builder
 WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
 
-# Copy package.json and package-lock.json to the working directory
-COPY package.json package-lock.json /app/
+# Stage 2: Serve the static files using Nginx
+FROM nginx:alpine
+# Copy the built static files from Vite's default 'dist' output folder
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
-# Install dependencies
-RUN npm install
-
-# Copy the entire codebase to the working directory
-COPY . /app/
-
-# Expose the port your container app
-EXPOSE 3000    
-
-# Define the command to start your application (replace "start" with the actual command to start your app)
-CMD ["npm", "start"]
