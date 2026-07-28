@@ -79,7 +79,7 @@ const Dashboard = () => {
   return (
     <>
       <Topbar
-        title="Dashboard"
+        title="Dashboard by Thejas"
         subtitle="Your boards and shared projects"
         onCreateBoard={openCreateBoard}
       />
