@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: kanban
-        image: thejas821/kanban
+        image: thejas821/kanban:latest
         ports: 
-        - containerPort: 8000
+        - containerPort: 80
