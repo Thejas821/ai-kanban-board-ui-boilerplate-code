@@ -105,7 +105,7 @@ const Hero = () => (
             <Sparkles className="h-3.5 w-3.5" /> AI-native project management
           </span>
           <h1 className="mx-auto mt-6 max-w-2xl font-display text-[clamp(36px,5.4vw,62px)] font-medium leading-[1.04] tracking-tight">
-            Plan smarter, ship faster with AI
+            Plan smarter, ship faster with AI, Deployed with <span style={{ color: '#5a189a', fontWeight: '600' }}>Micro</span><span style={{ color: '#ff0054', fontWeight: 'bold' }}>Degree</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-white/80 sm:text-lg">
             Flowboard turns a one-line goal into a prioritized backlog and keeps
